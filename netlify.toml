@@ -1,6 +1,6 @@
 [build]
-  command = "npm install && npm run build"  # adjust the build command as needed
-  publish = "."  # publish the entire project directory
+  command = "npm install && npm start"
+  publish = "public"  # adjust based on your project structure
 
 [[redirects]]
   from = "/*"
