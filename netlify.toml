@@ -1,0 +1,8 @@
+[build]
+  command = "npm install && npm run build"  # adjust the build command as needed
+  publish = "."  # publish the entire project directory
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
