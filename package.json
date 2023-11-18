@@ -3,19 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "start": "node index.js &",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Iftiaz-Ahmed/Iftiaz_Alfi_node.git"
   },
   "author": "Iftiaz Ahmed",
-  "license": "ISC",
-  "dependencies": {
-    "http": "",
-    "fs": "",
-    "path": ""
-  }
+  "license": "ISC"
 }
