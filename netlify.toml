@@ -1,3 +1,8 @@
 [build]
   command = "npm install && npm run build"  # adjust the build command as needed
-  publish = "public"
+  publish = "dist"  # adjust the directory containing your build output
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
