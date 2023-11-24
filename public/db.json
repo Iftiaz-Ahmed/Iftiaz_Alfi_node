@@ -1,49 +1,43 @@
 {
-    "coord": {
-      "lon": 10.99,
-      "lat": 44.34
-    },
-    "weather": [
+  "coord": {
+      "lon": -72.9757,
+      "lat": 41.2759
+  },
+  "weather": [
       {
-        "id": 501,
-        "main": "Rain",
-        "description": "moderate rain",
-        "icon": "10d"
+          "id": 800,
+          "main": "Clear",
+          "description": "clear sky",
+          "icon": "01d"
       }
-    ],
-    "base": "stations",
-    "main": {
-      "temp": 298.48,
-      "feels_like": 298.74,
-      "temp_min": 297.56,
-      "temp_max": 300.05,
-      "pressure": 1015,
-      "humidity": 64,
-      "sea_level": 1015,
-      "grnd_level": 933
-    },
-    "visibility": 10000,
-    "wind": {
-      "speed": 0.62,
-      "deg": 349,
-      "gust": 1.18
-    },
-    "rain": {
-      "1h": 3.16
-    },
-    "clouds": {
-      "all": 100
-    },
-    "dt": 1661870592,
-    "sys": {
+  ],
+  "base": "stations",
+  "main": {
+      "temp": 281.88,
+      "feels_like": 278.9,
+      "temp_min": 280.17,
+      "temp_max": 283.15,
+      "pressure": 1021,
+      "humidity": 46
+  },
+  "visibility": 10000,
+  "wind": {
+      "speed": 5.66,
+      "deg": 300
+  },
+  "clouds": {
+      "all": 0
+  },
+  "dt": 1700857276,
+  "sys": {
       "type": 2,
-      "id": 2075663,
-      "country": "IT",
-      "sunrise": 1661834187,
-      "sunset": 1661882248
-    },
-    "timezone": 7200,
-    "id": 3163858,
-    "name": "Zocca",
-    "cod": 200
-  } 
+      "id": 2002228,
+      "country": "US",
+      "sunrise": 1700826629,
+      "sunset": 1700861218
+  },
+  "timezone": -18000,
+  "id": 4845419,
+  "name": "West Haven",
+  "cod": 200
+}
