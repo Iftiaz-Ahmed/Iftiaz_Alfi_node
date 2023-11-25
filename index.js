@@ -1,15 +1,17 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const cors = require('cors');
 
 const PORT = process.env.PORT || 8112;
 
-// Enable CORS for all routes
-app.use(cors());
 
 http.createServer((req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
     console.log(req.url);
+    
     if (req.url === '/') {
         fs.readFile(path.join(__dirname, 'public', 'index.html'), (err, content) => {
             if (err) throw err;
