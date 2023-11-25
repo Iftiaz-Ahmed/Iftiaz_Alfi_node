@@ -1,8 +1,12 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const cors = require('cors');
 
 const PORT = process.env.PORT || 8112;
+
+// Enable CORS for all routes
+app.use(cors());
 
 http.createServer((req, res) => {
     console.log(req.url);
