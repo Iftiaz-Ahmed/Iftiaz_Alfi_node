@@ -86,6 +86,50 @@
             "id": 5128581,
             "name": "New York",
             "cod": 200
+        },
+        {
+            "coord": {
+                "lon": -122.4194,
+                "lat": 37.7749
+            },
+            "weather": [
+                {
+                    "id": 801,
+                    "main": "Clouds",
+                    "description": "few clouds",
+                    "icon": "02d"
+                }
+            ],
+            "base": "stations",
+            "main": {
+                "temp": 288.71,
+                "feels_like": 287.94,
+                "temp_min": 286.94,
+                "temp_max": 290.4,
+                "pressure": 1015,
+                "humidity": 62
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 3.58,
+                "deg": 45,
+                "gust": 5.36
+            },
+            "clouds": {
+                "all": 20
+            },
+            "dt": 1701293643,
+            "sys": {
+                "type": 2,
+                "id": 2017837,
+                "country": "US",
+                "sunrise": 1701270267,
+                "sunset": 1701305512
+            },
+            "timezone": -28800,
+            "id": 5391959,
+            "name": "San Francisco",
+            "cod": 200
         }
     ]
 }
