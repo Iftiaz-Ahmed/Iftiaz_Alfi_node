@@ -1,6 +1,0 @@
-services:
-  - type: web
-    name: your-web-service
-    buildCommand: npm install
-    startCommand: npm start
-    nodeVersion: 16
