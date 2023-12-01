@@ -20,6 +20,18 @@ async function findCurrentWeather(client) {
     }
 }
 
+async function threeHourForecast(client) {
+    try {
+        const cursor = client.db('weatherForecast').collection('threeHourForecast').find({});
+        const results = await cursor.toArray();
+        const js = JSON.stringify(results);
+        return js;
+    } catch (error) {
+        console.error('Error finding three hour forecast:', error);
+        throw error;
+    }
+}
+
 async function main() {
     try {
         await client.connect();
@@ -48,6 +60,10 @@ http.createServer(async (req, res) => {
     } else if (req.url === '/api/currentWeather') {
         res.writeHead(200, { 'Content-Type': 'application/json' });
         const content = await findCurrentWeather(client);
+        res.end(content);
+    } else if (req.url === '/api/threeHourForecast') {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        const content = await threeHourForecast(client);
         res.end(content);
     } else {
         res.writeHead(404, { 'Content-Type': 'text/html' });
