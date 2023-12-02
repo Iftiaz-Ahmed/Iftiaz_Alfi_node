@@ -57,6 +57,30 @@ http.createServer(async (req, res) => {
             res.writeHead(200, { 'Content-Type': 'text/html' });
             res.end(content);
         });
+    } else if (req.url === '/style.css') {
+        res.writeHead(200, { 'Content-Type': 'text/css' });
+        fs.createReadStream(__dirname + "/public/style.css", "utf8").pipe(res);
+    } else if (req.url.startsWith('/images/')) {
+        const imageName = req.url.substring(8); 
+        const imagePath = path.join(__dirname, 'public', 'images', imageName);
+        
+        fs.readFile(imagePath, (err, content) => {
+            if (err) {
+                res.writeHead(404);
+                res.end('File not found');
+            } else {
+                // Determine the appropriate content type based on the file extension
+                const ext = path.extname(imagePath).toLowerCase();
+                const contentType = {
+                    '.jpg': 'image/jpeg',
+                    '.jpeg': 'image/jpeg',
+                    '.png': 'image/png',
+                }[ext] || 'application/octet-stream';
+
+                res.writeHead(200, { 'Content-Type': contentType });
+                res.end(content);
+            }
+        });
     } else if (req.url === '/api/currentWeather') {
         res.writeHead(200, { 'Content-Type': 'application/json' });
         const content = await findCurrentWeather(client);

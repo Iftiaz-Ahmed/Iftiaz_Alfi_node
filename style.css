@@ -1,0 +1,411 @@
+:root{
+    --textFont: 18px;
+    --color1: #071330;
+    --color2: #0C4160;
+    --color3: #738FA7;
+    --color4: #C3CEDA;
+}
+
+body{
+    margin: 0;
+    font-family: 'Arvo', serif;
+    font-size: var(--textFont);
+    color: var(--color4);
+    background-color: var(--color2);
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "nav nav nav"
+    "aboutMe aboutMe aboutMePic"
+    "div1 div1 div1"
+    "experience experience experience"
+    "div2 div2 div2"
+    "education education education"
+    "div3 div3 div3"
+    "projectHeading projectHeading projectHeading"
+    "project1 project2 project3"
+    "blogHeading blogHeading blogHeading"
+    "blog1 blog2 blog3"
+    "footer footer footer"
+    ;
+}
+
+nav {
+    grid-area: nav;
+    padding: 20px 10px;
+    background-color: var(--color1);
+    height: 30px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+}
+
+nav li{
+    padding: 5px 10px;
+    display: inline-block;
+    font-size: var(--textFont);
+    border-left: 1px var(--color4) solid;
+}
+
+nav a{
+    color: var(--textColor);
+}
+
+.aboutMe {
+    grid-area: aboutMe;
+    margin-right: 8rem;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.aboutMePic{
+    grid-area: aboutMePic;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    padding-right: 50px;
+}
+
+.aboutMePic img{
+    width: 100%;
+}
+
+.divider{
+    grid-area: divider;
+    border: none;
+    border-top: 2px solid var(--color3);
+    margin: 50px 50px 20px;
+}
+
+#div1{
+    grid-area: div1;
+}
+
+#div2{
+    grid-area: div2;
+}
+
+#div3{
+    grid-area: div3;
+}
+
+.experience {
+    grid-area: experience;
+    margin-top: 20px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.experience .company{
+    margin-bottom: 30px;
+    margin-left: 20px;
+}
+
+.experience .title {
+    display: flex;
+}
+
+.experience .title h3{
+    flex: 1;
+    margin: 0;
+    font-size: 20px;
+}
+
+.experience .title h4{
+    flex: 1;
+    position: absolute;
+    right: 0;
+    margin: 0;
+    margin-right: 50px;
+}
+
+.experience .role{
+    margin: 0;
+    font-size: 15px;
+}
+
+.education {
+    grid-area: education;
+    margin-top: 20px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.education .institute{
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+
+.education h3{
+    margin: 0;
+}
+
+.education p {
+    margin: 0;
+}
+
+.projectHeading{
+    grid-area: projectHeading;
+    margin-top: 20px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+#project1{
+    grid-area: project1;
+    margin-left: 50px;
+}
+
+#project2{
+    grid-area: project2;
+}
+
+#project3{
+    grid-area: project3;
+    margin-right: 50px;
+}
+
+.work{
+    text-align: center;
+}
+
+.work img{
+    width: 300px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+
+}
+
+.work p {
+    padding: 0px 50px;
+}
+
+.blogHeading{
+    grid-area: blogHeading;
+    display: flex;
+}
+
+.blogHeading .divider{
+    flex: 1;
+}
+
+.blogHeading #divider4{
+    margin-left: 10rem;
+    margin-right: 20px;
+    margin-top: 50px;
+}
+
+.blogHeading #divider5{
+    margin-left: 20px;
+    margin-right: 10rem;
+    margin-top: 50px;
+}
+
+.blog {
+    height: 370px;
+    width: 300px;
+    border: 2px solid var(--color1);
+    margin: 0px auto 5px;
+    text-align: left;
+    background-color: var(--color4);
+    color: var(--color1);
+}
+
+#blog1{
+    grid-area: blog1;
+}
+
+#blog2{
+    grid-area: blog2;
+}
+
+.blog img{
+    width: 100%;
+    height: 60%;
+}
+
+.blog hr{
+    border: 1px solid var(--color1);
+}
+
+.blog h3{
+    margin: 5px 5px 5px 10px;
+    max-lines: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.blog h5{
+    margin: 0px 0px 5px;
+}
+
+.blog p{
+    margin: 0px 0px 20px 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.blog .views{
+    text-align: center;
+}
+
+.footer{
+    grid-area: footer;
+    border-top: 2px solid var(--color1);
+    height: 100px;
+    background: var(--color1);
+    margin-top: 30px;
+    text-align: center;
+}
+
+.footer .social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .social .item{
+    margin: 20px 20px 10px;
+}
+
+.footer .divider{
+    border: 1px solid var(--color4);
+    margin: 0px;
+    margin-left: 30rem;
+    margin-right: 30rem;
+}
+
+.footer p {
+    margin-top: 10px;
+    color: var(--color4);
+}
+
+.topnav {
+    overflow: hidden;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+@media only screen and (max-width: 500px) {
+    body{
+        font-size: 15px;
+    }
+
+    nav li{
+        border-left: 0px var(--color4) solid;
+    }
+
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "nav"
+        "aboutMePic"
+        "aboutMe"
+        "div1"
+        "experience"
+        "div2"
+        "education"
+        "div3"
+        "projectHeading"
+        "project1"
+        "project2"
+        "project3"
+        "blogHeading"
+        "blog1"
+        "blog2"
+        "blog3"
+        "footer"
+        ;
+    }
+
+    #project1, #project2, #project3{
+        margin: 10px 0px 20px;
+    }
+
+    #project1 p, #project2 p, #project3 p{
+        margin: 0px 60px;
+    }
+
+    #blog1, #blog2, #blog3{
+        margin-bottom: 30px;
+    }
+
+    .footer .divider{
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+
+    .blogHeading #divider4{
+        margin-left: 3rem;
+    }
+    
+    .blogHeading #divider5{
+        margin-right: 3rem;
+    }
+
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+        float: left;
+        display: block;
+        font-size: 30px;
+    }
+
+    .topnav.responsive {
+        position: relative;
+        height: 180px;
+    }
+    
+    .topnav.responsive a {
+        display: flex;
+        text-decoration: none;
+    }
+
+    .aboutMePic{
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 0px;
+    }
+
+    .aboutMe {
+        margin-right: 50px;
+        margin-left: 50px;
+        margin-top: 50px;
+    }
+
+    .experience .title h3{
+        flex: 1;
+        margin: 0;
+        font-size: var(--textFont);
+    }
+    
+    .experience .title h4{
+        flex: 1;
+        position: absolute;
+        right: 0;
+        margin: 0;
+    }
+
+    .projectHeading{
+        margin-right: 10px;
+        margin-left: 50px;
+    }
+
+
+}
