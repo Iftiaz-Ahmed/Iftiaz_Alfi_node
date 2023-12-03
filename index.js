@@ -13,11 +13,10 @@ async function findWeatherData(client) {
         const apiResult = {}
         const cursor = client.db('weatherForecast').collection('currentWeather').find({});
         const results = await cursor.toArray();
-        const js = JSON.stringify(results);
         
         const threeHrData = await threeHourForecast(client)
 
-        apiResult['currentWeather'] = js
+        apiResult['currentWeather'] = results
         apiResult['threeHourForecast'] = threeHrData
         return JSON.stringify(apiResult);
     } catch (error) {
@@ -30,8 +29,8 @@ async function threeHourForecast(client) {
     try {
         const cursor = client.db('weatherForecast').collection('threeHourForecast').find({});
         const results = await cursor.toArray();
-        const js = JSON.stringify(results);
-        return js;
+
+        return results;
     } catch (error) {
         console.error('Error finding three hour forecast:', error);
         throw error;
