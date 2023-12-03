@@ -8,12 +8,18 @@ const PORT = process.env.PORT || 8112;
 const uri = 'mongodb+srv://iftiaz:iftiazalfi@cluster0.svmgu1a.mongodb.net/weatherForecast';
 const client = new MongoClient(uri);
 
-async function findCurrentWeather(client) {
+async function findWeatherData(client) {
     try {
+        const apiResult = {}
         const cursor = client.db('weatherForecast').collection('currentWeather').find({});
         const results = await cursor.toArray();
         const js = JSON.stringify(results);
-        return js;
+        
+        const threeHrData = await threeHourForecast(client)
+
+        apiResult['currentWeather'] = js
+        apiResult['threeHourForecast'] = threeHrData
+        return JSON.stringify(apiResult);
     } catch (error) {
         console.error('Error finding current weather:', error);
         throw error;
@@ -72,13 +78,9 @@ http.createServer(async (req, res) => {
                 res.end(content);
             }
         });
-    } else if (req.url === '/api/currentWeather') {
+    } else if (req.url === '/api') {
         res.writeHead(200, { 'Content-Type': 'application/json' });
-        const content = await findCurrentWeather(client);
-        res.end(content);
-    } else if (req.url === '/api/threeHourForecast') {
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        const content = await threeHourForecast(client);
+        const content = await findWeatherData(client);
         res.end(content);
     } else {
         res.writeHead(404, { 'Content-Type': 'text/html' });
